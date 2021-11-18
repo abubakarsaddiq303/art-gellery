@@ -1,30 +1,11 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import react from 'react';
-import './App.css';
-import Fetchapi from './Fetchapi';
+import react from "react";
+import "./App.css";
+import Fetchapi from "./Fetchapi";
 
 function App() {
   return (
     <div className="App">
-      
       <Fetchapi />
-      
-      
     </div>
   );
 }

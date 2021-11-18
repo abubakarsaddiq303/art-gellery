@@ -7,6 +7,7 @@ body {
 }
 
 .ArtIcon {
+  padding-top: 1rem;
   padding-left: 1rem;
   align-self: center;
   display: flex;
@@ -22,6 +23,10 @@ h2 {
   width: 100%;
   /* box-shadow: 10px 2px #ffdfdf; */
   margin-top: 1rem;
+}
+.Gallery {
+  color: #000;
+  text-decoration: none;
 }
 
 .navbar {
@@ -55,12 +60,13 @@ h2 {
 }
 
 .row {
-  display: flex;
+  display: flex !important;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .imagegrid {
+  display: flex;
   margin-top: 1rem;
   margin-left: 0.2rem;
   flex-wrap: nowrap;
@@ -110,6 +116,9 @@ li {
 @media (max-width: 400px) {
   .Search {
     width: 300px;
+  }
+  ul {
+    overflow: scroll;
   }
   li {
     font-weight: 400;

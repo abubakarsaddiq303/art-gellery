@@ -3,23 +3,34 @@ import { createClient } from "pexels";
 import search1 from "./magnifying-glass.png";
 import search2 from "./gallery.png";
 import "./App.css";
+import { Pagination } from "react-bootstrap";
+import ReactPaginate from "react-paginate";
+
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 function Fetchapi() {
   const [image1, setImage] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("beautiful");
 
-  const fetchData = async () => {
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async (e) => {
     // const image = await fetch('https://api.pexels.com/v1/curated?per_page=1"563492ad6f91700001000001929f59b90b0943c6bea996c79659a42a')
 
     // const Image = await image.json();
     // console.log(Image)
     // setImage(Image)
+    var query;
     console.log("123");
     const client = createClient(
       "563492ad6f91700001000001929f59b90b0943c6bea996c79659a42a"
     );
-    const query = search;
 
+    if (e) {
+      query = e;
+    } else query = search;
     await client.photos.search({ query, per_page: 80 }).then((photos) => {
       setImage(photos);
       console.log(photos);
@@ -29,11 +40,29 @@ function Fetchapi() {
   console.log(image1);
   console.log(search);
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      fetchData();
+      console.log("do validate");
+    }
+  };
+
+  const handlepageClick = () => {
+    console.log("clicked");
+  };
+
   return (
     <div>
       <div className="header">
-        <img src={search2} alt="search" class="ArtIcon" />
-        <h2> Art Gallery</h2>
+        <a href="/">
+          <img src={search2} alt="search" class="ArtIcon" />
+        </a>
+        <h2>
+          <a className="Gallery" href="/">
+            {" "}
+            Art Gallery{" "}
+          </a>{" "}
+        </h2>
 
         <div class="navbar">
           <a href="#">About</a>
@@ -46,46 +75,117 @@ function Fetchapi() {
       <br />
 
       <div className="Search">
+        <input
+          //   value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder={"Search Images"}
+          onKeyDown={handleKeyDown}
+        />
+
         <img
           src={search1}
           alt="search"
           class="icon"
           onClick={(e) => fetchData()}
         />
-
-        <input
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder={"Search Images"}
-        />
       </div>
 
       <div className="All">
         <ul className="Items ">
-          <li className="item">
-            <a className=" active" aria-current="page" href="#">
-              All
-            </a>
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("Art");
+            }}
+          >
+            Art
           </li>
-          <li className="item">
-            <a className="link" href="#">
-              Travel
-            </a>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("culture");
+            }}
+          >
+            Culture
           </li>
-          <li className="item">
-            <a className="link" href="#">
-              Nature
-            </a>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("Sports");
+            }}
+          >
+            Sports
           </li>
-          <li className="item">
-            <a class="link" href="#">
-              Photogaraphy
-            </a>
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("Travel");
+            }}
+          >
+            Travel
           </li>
-          <li className="item">
-            <a className="link" href="#">
-              Fashion
-            </a>
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("nature");
+            }}
+          >
+            Nature
+          </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("animals");
+            }}
+          >
+            Animals
+          </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("Photography");
+            }}
+          >
+            Photography
+          </li>
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("Fashion");
+            }}
+          >
+            Fashion
+          </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("comic");
+            }}
+          >
+            Comic
+          </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("flowers");
+            }}
+          >
+            Flowers
+          </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("love");
+            }}
+          >
+            Love
           </li>
         </ul>
       </div>
@@ -109,14 +209,18 @@ function Fetchapi() {
             })
           : null}
       </div>
+
+      <ReactPaginate
+        previousLabel={"previous"}
+        nextLabel={"next"}
+        pageCount={10}
+        marginPagesDisplayed={2}
+        onPageChange={handlepageClick}
+      />
     </div>
   );
 }
 export default Fetchapi;
-
-{
-  /* 563492ad6f91700001000001929f59b90b0943c6bea996c79659a42a */
-}
 
 // import react, { useState } from "react";
 
