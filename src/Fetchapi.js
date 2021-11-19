@@ -7,11 +7,14 @@ import { Pagination } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
-
+const client = createClient(
+  "563492ad6f91700001000001929f59b90b0943c6bea996c79659a42a"
+);
 function Fetchapi() {
   const [image1, setImage] = useState([]);
   const [search, setSearch] = useState("beautiful");
-
+  const [paginate, setpaginate] = useState("");
+  var query;
   useEffect(() => {
     fetchData();
   }, []);
@@ -22,11 +25,8 @@ function Fetchapi() {
     // const Image = await image.json();
     // console.log(Image)
     // setImage(Image)
-    var query;
+
     console.log("123");
-    const client = createClient(
-      "563492ad6f91700001000001929f59b90b0943c6bea996c79659a42a"
-    );
 
     if (e) {
       query = e;
@@ -34,6 +34,8 @@ function Fetchapi() {
     await client.photos.search({ query, per_page: 80 }).then((photos) => {
       setImage(photos);
       console.log(photos);
+
+      setpaginate(photos.next_page);
     });
   };
 
@@ -47,8 +49,14 @@ function Fetchapi() {
     }
   };
 
-  const handlepageClick = () => {
-    console.log("clicked");
+  const pagination = async () => {
+    query = "nature";
+    await client.photos
+      .search({ query, paginate, per_page: 80 })
+      .then((photos) => {
+        setImage(photos);
+        setpaginate(photos.next_page);
+      });
   };
 
   return (
@@ -210,17 +218,33 @@ function Fetchapi() {
           : null}
       </div>
 
-      <ReactPaginate
-        previousLabel={"previous"}
-        nextLabel={"next"}
-        pageCount={10}
-        marginPagesDisplayed={2}
-        onPageChange={handlepageClick}
-      />
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" onClick={pagination}>
+          1
+        </a>
+        <a href="#" onClick={pagination}>
+          2
+        </a>
+        <a href="#" onClick={pagination}>
+          3
+        </a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+        <a href="#">10</a>
+        <a href="#">&raquo;</a>
+      </div>
     </div>
   );
 }
 export default Fetchapi;
+
+// onPageChange={(e) => fetchData(paginate)}
 
 // import react, { useState } from "react";
 
