@@ -1,10 +1,11 @@
 import react, { useState, useEffect } from "react";
 import { createClient } from "pexels";
 import search1 from "./magnifying-glass.png";
-import search2 from "./gallery.png";
+
 import "./App.css";
 import { Pagination } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
+import { Link } from "react-router-dom";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 const client = createClient(
@@ -61,25 +62,8 @@ function Fetchapi() {
 
   return (
     <div>
-      <div className="header">
-        <a href="/">
-          <img src={search2} alt="search" class="ArtIcon" />
-        </a>
-        <h2>
-          <a className="Gallery" href="/">
-            {" "}
-            Art Gallery{" "}
-          </a>{" "}
-        </h2>
-
-        <div class="navbar">
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </div>
-      </div>
-
       <br />
-
+      <br />
       <br />
 
       <div className="Search">
@@ -103,6 +87,24 @@ function Fetchapi() {
           <li
             className="item"
             onClick={async (e) => {
+              await fetchData("Wallpapers");
+            }}
+          >
+            Wallpapers
+          </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("Film");
+            }}
+          >
+            Film
+          </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
               await fetchData("Art");
             }}
           >
@@ -121,11 +123,30 @@ function Fetchapi() {
           <li
             className="item"
             onClick={async (e) => {
+              await fetchData("Food & Drink");
+            }}
+          >
+            Food & Drink
+          </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
               await fetchData("Sports");
             }}
           >
             Sports
           </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("Fitness");
+            }}
+          >
+            Fitness
+          </li>
+
           <li
             className="item"
             onClick={async (e) => {
@@ -185,6 +206,24 @@ function Fetchapi() {
             }}
           >
             Flowers
+          </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("love");
+            }}
+          >
+            Love
+          </li>
+
+          <li
+            className="item"
+            onClick={async (e) => {
+              await fetchData("History");
+            }}
+          >
+            History
           </li>
 
           <li
