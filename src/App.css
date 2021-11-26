@@ -16,8 +16,8 @@ body {
   padding-left: 1rem;
   align-self: center;
   display: flex;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 h2 {
@@ -95,7 +95,7 @@ h2 {
   flex-wrap: nowrap;
   border-radius: 3px;
   width: auto;
-  height: 225px;
+  height: 213px;
   object-fit: cover;
   flex-direction: column;
 }
@@ -205,4 +205,9 @@ li {
   ul {
     font-size: x-small;
   }
+}
+/* <===============Contact US=================> */
+
+.Contact {
+  padding: 3rem;
 }

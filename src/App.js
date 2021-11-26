@@ -10,6 +10,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Router>
         <div className="App">
           <Header />
+
           <Routes>
             <Route path="/" element={<Fetchapi />} />
             <Route path="/about" element={<About />} />
@@ -25,6 +27,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+      <Footer />
     </>
   );
 }
