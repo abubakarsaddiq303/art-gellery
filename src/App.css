@@ -171,11 +171,13 @@ li {
   border-bottom-right-radius: 5px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 375px) {
   .Search {
-    width: 300px;
+    width: 384px;
+    margin-top: 30px;
   }
   .All {
+    padding-top: 90px;
     width: 100%;
   }
   ul {
@@ -187,11 +189,16 @@ li {
     margin-top: 0;
     margin-left: 0;
   }
+  .row {
+    padding-top: 8rem;
+  }
   .imagegrid {
     width: auto;
     max-width: 350px;
+    width: 11rem;
   }
   .Search input {
+    width: 15rem;
     font-size: 15px;
   }
   .pagination {
@@ -204,10 +211,23 @@ li {
 @media (max-width: 768px) {
   ul {
     font-size: x-small;
+    overflow: scroll;
+  }
+  .All {
+    width: 67rem;
   }
 }
-/* <===============Contact US=================> */
 
-.Contact {
-  padding: 3rem;
+@media (max-width: 1024px) {
+  .All {
+    width: 140%;
+  }
+  ul {
+    overflow: scroll;
+  }
+  .imagegrid {
+    height: 166px;
+  }
 }
+
+/* <===============Contact US=================> */

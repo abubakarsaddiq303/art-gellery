@@ -3,7 +3,9 @@ footer {
   display: flex;
 }
 .footer-basic {
-  padding: 9px 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 32px 0;
   background-color: #ffffff;
   color: #4b4c4d;
 }
@@ -15,8 +17,8 @@ footer {
   line-height: 1.6;
   margin-bottom: 0;
 }
-.list-inline {
-  padding-left: 25rem;
+.footerLeft {
+  display: flex;
 }
 
 .footer-basic li {
@@ -57,9 +59,21 @@ footer {
 }
 
 .footer-basic .copyright {
-  margin-top: 15px;
   padding-left: 2rem;
   font-size: 13px;
   color: #aaa;
   margin-bottom: 0;
+}
+
+@media (max-width: 375px) {
+  .footer-basic {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 1024px) {
 }

@@ -3,9 +3,6 @@ import { createClient } from "pexels";
 import search1 from "./magnifying-glass.png";
 
 import "./App.css";
-import { Pagination } from "react-bootstrap";
-import ReactPaginate from "react-paginate";
-import { Link } from "react-router-dom";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 const client = createClient(
@@ -268,14 +265,27 @@ function Fetchapi() {
         <a href="#" onClick={pagination}>
           3
         </a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">7</a>
-        <a href="#">8</a>
-        <a href="#">8</a>
-        <a href="#">9</a>
-        <a href="#">10</a>
+        <a href="#" onClick={pagination}>
+          4
+        </a>
+        <a href="#" onClick={pagination}>
+          5
+        </a>
+        <a href="#" onClick={pagination}>
+          6
+        </a>
+        <a href="#" onClick={pagination}>
+          7
+        </a>
+        <a href="#" onClick={pagination}>
+          8
+        </a>
+        <a href="#" onClick={pagination}>
+          9
+        </a>
+        <a href="#" onClick={pagination}>
+          10
+        </a>
         <a href="#">&raquo;</a>
       </div>
     </div>

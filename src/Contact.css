@@ -1,11 +1,5 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-* {
-  box-sizing: border-box;
-}
-
 .Contact {
+  padding-top: 6rem;
   align-content: stretch;
   justify-content: space-evenly;
   align-items: flex-start;
@@ -45,13 +39,27 @@ input[type="submit"]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
-.column {
+.ContactmeLeft {
   float: left;
   width: 33.33%;
   padding: 10px;
   height: 545px; /* Should be removed. Only for demonstration */
 }
-
+.ContactmeRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 545px; /* Should be removed. Only for demonstration */
+}
+.ContactRow {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -60,4 +68,22 @@ input[type="submit"]:hover {
 }
 .line {
   border-top: 2px solid rgb(70, 60, 53);
+}
+.Sendbtn {
+  background-color: skyblue;
+  height: 2rem;
+  width: 4rem;
+  border: none;
+}
+@media (max-width: 375px) {
+  .ContactmeLeft {
+    width: 21rem;
+  }
+  button {
+    margin-right: 0;
+  }
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 1024px) {
 }
