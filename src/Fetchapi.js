@@ -1,8 +1,11 @@
 import react, { useState, useEffect } from "react";
+
 import { createClient } from "pexels";
 import search1 from "./magnifying-glass.png";
-
 import "./App.css";
+
+import { useContext } from "react";
+import { ThemeContext } from "./contexts/theme";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 const client = createClient(
@@ -57,32 +60,35 @@ function Fetchapi() {
       });
   };
 
+  const [{ isDark }, toggleTheme] = useContext(ThemeContext);
+
   return (
     <div>
       <br />
       <br />
       <br />
 
-      <div className="Search">
+      <div className={isDark ? "SearchDark" : "Search"}>
         <input
+          className={isDark ? "inputDark" : "input"}
           //   value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder={"Search Images"}
+          placeholder={"Search Images, wallpapers ..."}
           onKeyDown={handleKeyDown}
         />
 
         <img
           src={search1}
           alt="search"
-          class="icon"
+          class={isDark ? "iconDark" : "icon"}
           onClick={(e) => fetchData()}
         />
       </div>
 
-      <div className="All">
-        <ul className="Items ">
+      <div className={isDark ? "AllDark" : "All"}>
+        <ul className={isDark ? "itemsDark" : "Items "}>
           <li
-            className="item"
+            className={isDark ? "itemDark" : "item"}
             onClick={async (e) => {
               await fetchData("Wallpapers");
             }}
@@ -237,7 +243,7 @@ function Fetchapi() {
       {/* <button style={{marginLeft:'38rem'}} onClick={fetchData}><h5 >Fetch Api </h5> </button>
       <br/> */}
 
-      <div class="row">
+      <div class={isDark ? "rowDark" : "row"}>
         {image1.length !== 0
           ? image1.photos.map((item) => {
               return (
@@ -254,7 +260,7 @@ function Fetchapi() {
           : null}
       </div>
 
-      <div class="pagination">
+      <div class={isDark ? "paginationDark" : "pagination"}>
         <a href="#">&laquo;</a>
         <a href="#" onClick={pagination}>
           1

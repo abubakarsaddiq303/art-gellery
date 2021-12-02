@@ -3,10 +3,16 @@ import "./Footer.css";
 import Facebook from "./Facebook.png";
 import Twitter from "./Twitter.png";
 import Github from "./Github.png";
+import { Link } from "react-router-dom";
+
+import { useContext } from "react";
+import { ThemeContext } from "./contexts/theme";
 
 function Footer() {
+  const [{ isDark }, toggleTheme] = useContext(ThemeContext);
+
   return (
-    <div className="footer-basic">
+    <div className={isDark ? "footer-basicDark" : "footer-basic"}>
       {/* <h1 style={{ textAlign: "center" }}>Footer</h1> */}
       <div className="footerLeft">
         <p class="copyright">Saddique © 2021</p>
@@ -14,26 +20,30 @@ function Footer() {
       <div className="footerCenter">
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="#">Terms</a>
+            <a className={isDark ? "termsDark" : "terms"}>Terms</a>
           </li>
           <li class="list-inline-item">
-            <a href="#">Privacy Policy</a>
+            <a className={isDark ? "privacyDark" : "privacy"}>Privacy Policy</a>
           </li>
         </ul>
       </div>
       <div className="footerRight">
-        <a href="#">
-          <img src={Facebook} alt="facebook" class="icon" />
+        <a href="http://facebook.com">
+          <img
+            src={Facebook}
+            alt="facebook"
+            class={isDark ? "iconDark" : "icon"}
+          />
         </a>
-        <a href="#">
+        <a href="https://twitter.com">
           <img
             src={Twitter}
             alt="twitter"
-            class="icon"
+            class={isDark ? "iconDark" : "icon"}
             style={{ marginLeft: "1rem" }}
           />
         </a>
-        <a href="https://github.com/abubakarsaddiq303/art-gellery">
+        <a href="https://github.com">
           <img
             src={Github}
             alt="github"

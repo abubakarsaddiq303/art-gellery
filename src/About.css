@@ -12,50 +12,53 @@ html {
 *:after {
   box-sizing: inherit;
 }
-.About {
-  padding-top: 6rem;
+.About,
+.AboutDark {
+  padding-top: 6.4rem;
   align-content: stretch;
   justify-content: space-evenly;
   align-items: flex-start;
   flex-direction: column;
 }
+.AboutDark {
+  background-color: #333;
+}
 
-.AboutCard {
+.headDark {
+  color: white;
+}
+
+.AboutCard,
+.AboutCardDark {
+  display: inline-table;
   padding-top: 3rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
   margin: 8px;
 
   border-radius: 5px;
 }
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
+.AboutCardDark {
+  box-shadow: 0 4px 8px 0 rgb(255, 255, 255);
+  background-color: #333 !important;
 }
 
-.container::after,
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+.containerDark {
+  color: aliceblue;
 }
-
-.title {
-  color: grey;
+.CeoDark,
+.Ceo {
+  padding-left: 5rem;
 }
-
 .button {
   border: none;
   outline: 0;
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #04aa6d;
+
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 13rem;
   border-radius: 3px;
 }
 

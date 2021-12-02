@@ -1,3 +1,19 @@
+.btnDark,
+.btnLight {
+  border: none;
+  outline: none;
+  border-radius: 2px;
+}
+
+.btnLight {
+  color: rgb(0, 0, 0);
+  background: whitesmoke;
+}
+.btnDark {
+  color: rgb(255, 255, 255);
+  background: #333;
+}
+
 body {
   background-color: whitesmoke;
 }
@@ -11,13 +27,25 @@ body {
   display: flex;
 }
 
-.ArtIcon {
+.headerDark {
+  width: 100%;
+  background-color: #333;
+  position: fixed;
+  display: flex;
+}
+
+.ArtIcon,
+.ArtIconDark {
   padding-top: 1rem;
   padding-left: 1rem;
   align-self: center;
   display: flex;
   width: 3rem;
   height: 3rem;
+  margin-left: 0;
+}
+.ArtIconDark {
+  filter: invert(0.7);
 }
 
 h2 {
@@ -34,8 +62,13 @@ h2 {
   text-decoration: none;
 }
 
-.navbar {
-  padding-right: 1rem;
+.GalleryDark {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar,
+.navbarDark {
   align-self: center;
   display: flex;
   justify-content: end !important;
@@ -43,14 +76,24 @@ h2 {
   width: 100%;
 }
 .navbar a {
+  padding-right: 0.5;
   color: #000;
   text-decoration: none;
   justify-content: center;
   font-weight: bold;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
+}
+.navbarDark a {
+  padding-right: 0.5;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  justify-content: center;
+  font-weight: bold;
+  padding-left: 1rem;
 }
 
-.Search {
+.Search,
+.SearchDark {
   justify-content: center;
 
   margin-top: 100px;
@@ -67,7 +110,12 @@ h2 {
   margin-top: 45px;
 }
 
-.All {
+.SearchDark {
+  background-color: #333;
+}
+
+.All,
+.AllDark {
   position: fixed;
   /* position: absolute; */
   background-color: whitesmoke;
@@ -76,16 +124,33 @@ h2 {
   padding-top: 140px;
 }
 
-.icon {
+.AllDark {
+  background-color: #333;
+}
+
+.itemsDark {
+  color: whitesmoke;
+}
+
+.icon,
+.iconDark {
   margin-top: 0;
   width: 2rem;
   height: 2rem;
 }
+.iconDark {
+  filter: invert(1);
+}
 
-.row {
-  display: flex !important;
+.row,
+.rowDark {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.rowDark {
+  background-color: #333;
 }
 
 .imagegrid {
@@ -100,7 +165,7 @@ h2 {
   flex-direction: column;
 }
 
-input {
+.input {
   background-color: transparent;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -115,6 +180,23 @@ input {
   border-bottom: 1px solid #8a8a8a;
   outline: none;
 }
+.inputDark {
+  background-color: transparent;
+  color: rgb(253, 243, 243);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  height: 2rem;
+
+  margin-left: 0rem;
+
+  width: 40rem;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid #8a8a8a;
+  outline: none;
+}
+
 ul {
   padding-left: 0;
   justify-content: center;
@@ -137,10 +219,18 @@ li {
   text-decoration: none;
 }
 .pagination {
-  margin-bottom: 1rem;
+  padding-bottom: 20px;
   padding-top: 1rem;
   display: flex;
   justify-content: center;
+}
+
+.paginationDark {
+  padding-bottom: 20px;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
 }
 
 .pagination a {
@@ -150,11 +240,23 @@ li {
   text-decoration: none;
   border: 1px solid #ddd;
 }
+.paginationDark a {
+  color: rgb(255, 255, 255);
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid rgb(255, 238, 238);
+}
 
 .pagination a:hover {
-  background-color: #126d15;
-  color: white;
-  border: 1px solid #4caf50;
+  background-color: cyan;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(11, 209, 209);
+}
+.paginationDark a:hover {
+  background-color: cyan;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(11, 209, 209);
 }
 
 /* .pagination a:hover:not(.active) {
@@ -196,15 +298,22 @@ li {
     width: auto;
     max-width: 350px;
     width: 11rem;
+    height: 161;
   }
   .Search input {
+    width: 15rem;
+    font-size: 15px;
+  }
+
+  .SearchDark .inputDark {
     width: 15rem;
     font-size: 15px;
   }
   .pagination {
     overflow: scroll;
   }
-  .pagination a {
+  .pagination a,
+  .paginationDark a {
     padding: 8px 7px;
   }
 }

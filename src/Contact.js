@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./Contact.css";
 
+import { useContext } from "react";
+import { ThemeContext } from "./contexts/theme";
+
 function Contact() {
   const [firstname, setfirstname] = useState("");
   const [lastname, setlastname] = useState("");
@@ -27,10 +30,13 @@ function Contact() {
   console.log(lastname);
   console.log(subject);
   console.log(message);
+
+  const [{ isDark }, toggleTheme] = useContext(ThemeContext);
+
   return (
-    <div className="Contact">
-      <h1>Contact Me</h1>
-      <p>
+    <div className={isDark ? "ContactDark" : "Contact"}>
+      <h1 className={isDark ? "headingDark" : "heading"}>Contact Me</h1>
+      <p className={isDark ? "paragraphDark" : "paragraph"}>
         We’re here to help and answer any question you might have.
         <br /> We look forward to hearing from you
         <br /> 🙂
@@ -77,7 +83,7 @@ function Contact() {
             <label for="fname" style={{ display: "flex", color: "#9d9ca2" }}>
               <strong> Your Message</strong>
             </label>
-            <input
+            <textarea
               input
               type="text"
               id="subject"
