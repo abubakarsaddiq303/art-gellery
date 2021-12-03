@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import Facebook from "./Facebook.png";
 import linkedin from "./linkedin.png";
-import github from "./github.png";
+import Logo from "./Logo.png";
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";
@@ -46,7 +46,7 @@ function Footer() {
         </a>
         <a href="https://github.com/abubakarsaddiq303">
           <img
-            src={github}
+            src={Logo}
             alt="github"
             className={isDark ? "iconDark" : "icon"}
             style={{ marginLeft: "1rem", width: "20px", height: "20px" }}
