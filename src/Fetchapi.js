@@ -13,7 +13,7 @@ const client = createClient(
 );
 function Fetchapi() {
   const [image1, setImage] = useState([]);
-  const [search, setSearch] = useState("beautiful");
+  const [search, setSearch] = useState("themes");
   const [paginate, setpaginate] = useState("");
   var query;
   useEffect(() => {
@@ -228,20 +228,8 @@ function Fetchapi() {
           >
             History
           </li>
-
-          <li
-            className="item"
-            onClick={async (e) => {
-              await fetchData("love");
-            }}
-          >
-            Love
-          </li>
         </ul>
       </div>
-
-      {/* <button style={{marginLeft:'38rem'}} onClick={fetchData}><h5 >Fetch Api </h5> </button>
-      <br/> */}
 
       <div class={isDark ? "rowDark" : "row"}>
         {image1.length !== 0
@@ -251,7 +239,7 @@ function Fetchapi() {
                   {/* <p>{item.name}</p> */}
                   <img
                     alt="image"
-                    src={item.src.medium}
+                    src={item.src.large2x}
                     className="imagegrid"
                   />
                 </div>

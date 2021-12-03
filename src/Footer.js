@@ -1,8 +1,8 @@
 import React from "react";
 import "./Footer.css";
 import Facebook from "./Facebook.png";
-import Twitter from "./Twitter.png";
-import Github from "./Github.png";
+import linkedin from "./linkedin.png";
+import github from "./github.png";
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";
@@ -32,23 +32,24 @@ function Footer() {
           <img
             src={Facebook}
             alt="facebook"
-            class={isDark ? "iconDark" : "icon"}
+            className={isDark ? "iconDark" : "icon"}
+            style={{ width: "20px", height: "20px" }}
           />
         </a>
-        <a href="https://twitter.com">
+        <a href="https://www.linkedin.com/in/abubakar-saddiq-303/">
           <img
-            src={Twitter}
-            alt="twitter"
-            class={isDark ? "iconDark" : "icon"}
-            style={{ marginLeft: "1rem" }}
+            src={linkedin}
+            alt="linkedin"
+            className={isDark ? "iconDark" : "icon"}
+            style={{ marginLeft: "1rem", width: "20px", height: "20px" }}
           />
         </a>
-        <a href="https://github.com">
+        <a href="https://github.com/abubakarsaddiq303">
           <img
-            src={Github}
+            src={github}
             alt="github"
-            class="icon"
-            style={{ marginLeft: "1rem" }}
+            className={isDark ? "iconDark" : "icon"}
+            style={{ marginLeft: "1rem", width: "20px", height: "20px" }}
           />
         </a>
       </div>

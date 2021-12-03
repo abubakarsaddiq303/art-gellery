@@ -3,6 +3,7 @@ import "./Contact.css";
 
 import { useContext } from "react";
 import { ThemeContext } from "./contexts/theme";
+import emailjs from "emailjs-com";
 
 function Contact() {
   const [firstname, setfirstname] = useState("");
@@ -22,9 +23,6 @@ function Contact() {
   const handleMessage = (e) => {
     setmessage(e.target.value);
   };
-  const handleSubmit = (e) => {
-    alert(`${firstname} ${lastname} ${subject} ${message}`);
-  };
 
   console.log(firstname);
   console.log(lastname);
@@ -32,6 +30,24 @@ function Contact() {
   console.log(message);
 
   const [{ isDark }, toggleTheme] = useContext(ThemeContext);
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_s4vjtzo",
+        "template_q9n8dbt",
+        e.target,
+        "user_hUJ3EoRqDIN2O1jfXZqdo"
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+
+    window.location.reload();
+  }
 
   return (
     <div className={isDark ? "ContactDark" : "Contact"}>
@@ -43,27 +59,31 @@ function Contact() {
       </p>
       <div className="ContactRow">
         <div class="ContactmeLeft">
-          <form onSubmit={handleSubmit}>
-            <label for="fname" style={{ display: "flex", color: "#9d9ca2" }}>
-              <strong> First Name</strong>
+          <form
+            for="fname"
+            style={{ display: "flex", color: "#9d9ca2", flexWrap: "wrap" }}
+            onSubmit={sendEmail}
+          >
+            <label>
+              <strong>Full Name</strong>
             </label>
             <input
               input
               type="text"
               id="fname"
-              name="firstname"
+              name="fullname"
               placeholder=""
               onChange={handleFirstname}
             />
 
             <label for="fname" style={{ display: "flex", color: "#9d9ca2" }}>
-              <strong>Last Name</strong>
+              <strong>Email</strong>
             </label>
             <input
               input
-              type="text"
+              type="email"
               id="lname"
-              name="lastname"
+              name="user_email"
               placeholder=""
               onChange={handleLastname}
             />
@@ -87,7 +107,7 @@ function Contact() {
               input
               type="text"
               id="subject"
-              name="Subject"
+              name="message"
               placeholder=""
               style={{ height: "8rem" }}
               onChange={handleMessage}

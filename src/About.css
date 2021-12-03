@@ -45,10 +45,7 @@ html {
 .containerDark {
   color: aliceblue;
 }
-.CeoDark,
-.Ceo {
-  padding-left: 5rem;
-}
+
 .button {
   border: none;
   outline: 0;

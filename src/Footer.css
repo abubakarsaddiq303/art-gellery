@@ -17,20 +17,20 @@ footer {
 .footer-basic ul {
   list-style: none;
 
-  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 0;
 }
 .footer-basicDark ul {
   list-style: none;
 
-  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 0;
 }
 
 .footerLeft {
   display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .footer-basic li {
@@ -106,6 +106,8 @@ footer {
 }
 
 .footer-basic .copyright {
+  display: flex;
+  align-items: center;
   padding-left: 2rem;
   font-size: 13px;
   color: rgb(161, 161, 161);
@@ -117,6 +119,8 @@ footer {
   font-size: 13px;
   color: rgb(255, 255, 255);
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 .termsDark {
@@ -125,6 +129,13 @@ footer {
 .privacyDark {
   color: rgb(255, 255, 255) !important;
 }
+
+.footerRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .iconDark {
   filter: invert(1);
 }

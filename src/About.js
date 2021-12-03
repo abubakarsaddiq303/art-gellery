@@ -21,11 +21,15 @@ function About() {
 
       <div className="Aboutcolumn">
         <div className={isDark ? "AboutCardDark" : "AboutCard"}>
-          <img src={search2} alt="Jane" style={{ borderRadius: "150px" }} />
+          <img
+            src={search2}
+            alt="saddiq"
+            style={{ borderRadius: "12px", width: "20rem" }}
+          />
           <div className={isDark ? "containerDark" : "container"}>
             <h2 className={isDark ? "CeoDark" : "Ceo"}>ABUBAKAR SADDIQ</h2>
             <p className="title">CEO & Founder</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>MERN Stack Developer</p>
             <p>abubakar.saddiq303@gmail.com</p>
             <p>
               <button className="button" style={{ background: "skyblue" }}>
