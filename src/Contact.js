@@ -65,7 +65,7 @@ function Contact() {
             onSubmit={sendEmail}
           >
             <label>
-              <strong>Full Name</strong>
+              <strong style={{ color: "#B0B5C6" }}>Full Name</strong>
             </label>
             <input
               input
@@ -77,7 +77,7 @@ function Contact() {
             />
 
             <label for="fname" style={{ display: "flex", color: "#9d9ca2" }}>
-              <strong>Email</strong>
+              <strong style={{ color: "#B0B5C6" }}>Email</strong>
             </label>
             <input
               input
@@ -89,7 +89,7 @@ function Contact() {
             />
 
             <label for="fname" style={{ display: "flex", color: "#9d9ca2" }}>
-              <strong> Subject </strong>
+              <strong style={{ color: "#B0B5C6" }}> Subject </strong>
             </label>
             <input
               input
@@ -101,7 +101,7 @@ function Contact() {
             />
 
             <label for="fname" style={{ display: "flex", color: "#9d9ca2" }}>
-              <strong> Your Message</strong>
+              <strong style={{ color: "#B0B5C6" }}> Your Message</strong>
             </label>
             <textarea
               input

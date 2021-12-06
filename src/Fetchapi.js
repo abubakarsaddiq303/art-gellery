@@ -13,7 +13,7 @@ const client = createClient(
 );
 function Fetchapi() {
   const [image1, setImage] = useState([]);
-  const [search, setSearch] = useState("themes");
+  const [search, setSearch] = useState("Photography");
   const [paginate, setpaginate] = useState("");
   var query;
   useEffect(() => {

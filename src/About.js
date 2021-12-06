@@ -24,12 +24,15 @@ function About() {
           <img
             src={search2}
             alt="saddiq"
-            style={{ borderRadius: "12px", width: "20rem" }}
+            style={{
+              borderRadius: "91px",
+              width: "20rem",
+            }}
           />
           <div className={isDark ? "containerDark" : "container"}>
             <h2 className={isDark ? "CeoDark" : "Ceo"}>ABUBAKAR SADDIQ</h2>
-            <p className="title">CEO & Founder</p>
-            <p>MERN Stacgk Developer</p>
+
+            <p>MERN Stack Developer</p>
             <p>abubakar.saddiq303@gmail.com</p>
             <p>
               <button className="button" style={{ background: "skyblue" }}>

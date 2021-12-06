@@ -46,6 +46,10 @@ html {
   color: aliceblue;
 }
 
+.CeoDark {
+  padding-left: 2.5rem;
+}
+
 .button {
   border: none;
   outline: 0;
